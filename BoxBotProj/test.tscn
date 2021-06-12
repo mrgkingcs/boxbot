@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://test.gd" type="Script" id=1]
+[ext_resource path="res://Models/boxbotMesh_anim.glb" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="boxbotMesh_anim" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.624902, 0, 0.780703, 0, 1, 0, -0.780703, 0, 0.624902, 2.71998, 0, 2.48538 )
