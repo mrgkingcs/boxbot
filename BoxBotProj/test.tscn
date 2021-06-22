@@ -1,23 +1,108 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://test.gd" type="Script" id=1]
 [ext_resource path="res://Models/boxbotMesh_anim.fbx" type="PackedScene" id=2]
 [ext_resource path="res://Images/ProgButtons.png" type="Texture" id=3]
 
-[node name="Spatial" type="Spatial"]
-script = ExtResource( 1 )
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
 
-[node name="Camera" type="Camera" parent="."]
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 32.0
+content_margin_bottom = 32.0
+bg_color = Color( 0.192157, 0.2, 0.235294, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.117647, 0.117647, 0.12549, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 64, 64 )
+
+[node name="Root" type="Spatial"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 640, 480 )
+hdr = false
+render_target_update_mode = 3
+
+[node name="3DScene" type="Spatial" parent="Viewport"]
+
+[node name="Camera" type="Camera" parent="Viewport/3DScene"]
 transform = Transform( 0.624902, 0, 0.780703, 0, 1, 0, -0.780703, 0, 0.624902, 1.76679, 0.161471, 1.34618 )
 
-[node name="boxbotMesh_anim" parent="." instance=ExtResource( 2 )]
+[node name="boxbotMesh_anim" parent="Viewport/3DScene" instance=ExtResource( 2 )]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_right = 128.0
-margin_bottom = 192.0
-texture = ExtResource( 3 )
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+flip_v = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CommandPanel" type="PanelContainer" parent="."]
+anchor_right = 0.1
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="CommandPanel"]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 768.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CommandPanel/GridContainer"]
+margin_right = 88.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+bbcode_enabled = true
+bbcode_text = "[center]Available Commands[/center]"
+text = "Available Commands"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CommandPanel/GridContainer"]
+margin_top = 52.0
+margin_right = 88.0
+margin_bottom = 188.0
+grow_horizontal = 2
+size_flags_horizontal = 7
+custom_constants/separation = 8
+
+[node name="Forward" type="TextureRect" parent="CommandPanel/GridContainer/VBoxContainer"]
+margin_left = 12.0
+margin_right = 76.0
+margin_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource( 3 )
+stretch_mode = 5
+
+[node name="Backward" type="TextureRect" parent="CommandPanel/GridContainer/VBoxContainer"]
+margin_left = 12.0
+margin_top = 72.0
+margin_right = 76.0
+margin_bottom = 136.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource( 4 )
