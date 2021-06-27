@@ -12,22 +12,18 @@ func _ready():
 
 
 func begin_drag(commandIndex, controlToDrag):
-	draggingControl.rect_global_position = controlToDrag.rect_global_position
-	draggingControl.rect_size = controlToDrag.rect_size
+	draggingControl.global_position = controlToDrag.rect_global_position + controlToDrag.rect_size*0.5
 	draggingControl.texture = controlToDrag.texture
 	draggingControl.set_visible(true)
 	isDragging = true
-	print("begin_drag()")
 
 func stop_drag():
 	draggingControl.set_visible(false)
 
-
-
 func _input(event):
 	if isDragging:
 		if event is InputEventMouseMotion:
-			draggingControl.rect_position += event.relative
+			draggingControl.position += event.relative
 		elif event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed == false:
 				draggingControl.set_visible(false)

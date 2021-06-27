@@ -48,9 +48,5 @@ func _on_command_gui_input(event, commandIndex):
 			if event.pressed == true:
 				var command = get_node("GridContainer/CommandIconContainer").get_child(highlightedIndex)
 				dragManager.begin_drag(commandIndex, command)
-			else:
-				print("Pressed:", event.pressed)
-		else:
-			print("Mouse button: ",event.button_index)
 
 

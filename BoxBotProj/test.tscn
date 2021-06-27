@@ -243,15 +243,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DraggingCommand" type="TextureRect" parent="DragManager"]
+[node name="DraggingCommand" type="Sprite" parent="DragManager"]
 visible = false
-margin_right = 64.0
-margin_bottom = 64.0
-mouse_filter = 2
 texture = SubResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_gui_input" binds= [ 0 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 0 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 0 ]]
