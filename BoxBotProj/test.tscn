@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Fonts/PanelStyle.tres" type="StyleBox" id=1]
 [ext_resource path="res://Models/boxbotMesh_anim.fbx" type="PackedScene" id=2]
 [ext_resource path="res://Images/ProgButtons.png" type="Texture" id=3]
 [ext_resource path="res://CommandPanel.gd" type="Script" id=4]
+[ext_resource path="res://DragManager.gd" type="Script" id=5]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -66,6 +67,13 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 64, 64 )
 
 [node name="Root" type="Spatial"]
 
@@ -224,15 +232,41 @@ custom_constants/separation = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DragManager" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 10 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DraggingCommand" type="TextureRect" parent="DragManager"]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+texture = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_gui_input" binds= [ 0 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 0 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 0 ]]
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Backward" to="CommandPanel" method="_on_command_gui_input" binds= [ 1 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Backward" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 1 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Backward" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 1 ]]
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Left" to="CommandPanel" method="_on_command_gui_input" binds= [ 2 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Left" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 2 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Left" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 2 ]]
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Right" to="CommandPanel" method="_on_command_gui_input" binds= [ 3 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Right" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 3 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Right" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 3 ]]
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Pick Up" to="CommandPanel" method="_on_command_gui_input" binds= [ 4 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Pick Up" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 4 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Pick Up" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 4 ]]
+[connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Put Down" to="CommandPanel" method="_on_command_gui_input" binds= [ 5 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Put Down" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 5 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Put Down" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 5 ]]

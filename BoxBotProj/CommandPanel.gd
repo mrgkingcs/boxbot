@@ -5,10 +5,15 @@ var commandHighlight = null
 var highlightedIndex = -1
 var highlightDirty = false
 
+var dragManager = null
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	commandHighlight = get_node("../CommandHighlight")
 	commandHighlight.set_visible(false)
+
+	dragManager = get_node("../DragManager")
 	
 func _process(delta):
 	if highlightDirty:
@@ -35,3 +40,17 @@ func _on_command_mouse_exited(commandIndex):
 	if commandIndex == highlightedIndex:
 		highlightedIndex = -1
 		highlightDirty = true
+
+
+func _on_command_gui_input(event, commandIndex):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed == true:
+				var command = get_node("GridContainer/CommandIconContainer").get_child(highlightedIndex)
+				dragManager.begin_drag(commandIndex, command)
+			else:
+				print("Pressed:", event.pressed)
+		else:
+			print("Mouse button: ",event.button_index)
+
+
