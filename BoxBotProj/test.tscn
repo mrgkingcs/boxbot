@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Fonts/PanelStyle.tres" type="StyleBox" id=1]
 [ext_resource path="res://Models/boxbotMesh_anim.fbx" type="PackedScene" id=2]
@@ -52,6 +52,11 @@ expand_margin_left = 4.0
 expand_margin_right = 4.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 64, 64, 64 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 32.0
@@ -139,7 +144,7 @@ margin_left = 12.0
 margin_right = 76.0
 margin_bottom = 64.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 1 )
 stretch_mode = 5
 
@@ -149,7 +154,7 @@ margin_top = 72.0
 margin_right = 76.0
 margin_bottom = 136.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 2 )
 
 [node name="Left" type="TextureRect" parent="CommandPanel/GridContainer/CommandIconContainer"]
@@ -158,7 +163,7 @@ margin_top = 144.0
 margin_right = 76.0
 margin_bottom = 208.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 3 )
 
 [node name="Right" type="TextureRect" parent="CommandPanel/GridContainer/CommandIconContainer"]
@@ -167,7 +172,7 @@ margin_top = 216.0
 margin_right = 76.0
 margin_bottom = 280.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 4 )
 
 [node name="Pick Up" type="TextureRect" parent="CommandPanel/GridContainer/CommandIconContainer"]
@@ -176,7 +181,7 @@ margin_top = 288.0
 margin_right = 76.0
 margin_bottom = 352.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 5 )
 
 [node name="Put Down" type="TextureRect" parent="CommandPanel/GridContainer/CommandIconContainer"]
@@ -185,7 +190,7 @@ margin_top = 360.0
 margin_right = 76.0
 margin_bottom = 424.0
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 4
 texture = SubResource( 6 )
 
 [node name="CommandHighlight" type="Panel" parent="."]
@@ -198,6 +203,14 @@ custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CommandBlank" type="TextureRect" parent="."]
+visible = false
+margin_right = 64.0
+margin_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource( 11 )
 
 [node name="ProgramPanel" type="PanelContainer" parent="."]
 anchor_left = 0.125

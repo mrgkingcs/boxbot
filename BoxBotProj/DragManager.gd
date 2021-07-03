@@ -20,6 +20,7 @@ func begin_drag(commandIndex, controlToDrag):
 
 func stop_drag():
 	draggingControl.set_visible(false)
+	controlBeingDragged = null
 
 func _input(event):
 	if isDragging:
