@@ -40,7 +40,7 @@
      id="namedview228"
      showgrid="true"
      inkscape:zoom="1.6819299"
-     inkscape:cx="337.96284"
+     inkscape:cx="191.40501"
      inkscape:cy="630.51566"
      inkscape:window-x="2235"
      inkscape:window-y="722"
@@ -682,7 +682,11 @@
        cx="138.69099"
        cy="575.00299"
        gradientTransform="matrix(1.6229,-188.388,150.596,1.29733,-86677.881,26184.653)"
-       r="1">
+       r="1"
+       fx="138.69099"
+       fy="575.00299"
+       fr="0"
+       spreadMethod="pad">
       <stop
          offset="0"
          stop-color="#a8b0bc"
@@ -692,6 +696,19 @@
          stop-color="#5f5f5f"
          id="stop49-7" />
     </radialGradient>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1260"
+       x="-0.082799562"
+       width="1.1655991"
+       y="-0.082800438"
+       height="1.1656009">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="6.520707"
+         id="feGaussianBlur1262" />
+    </filter>
   </defs>
   <path
      inkscape:connector-curvature="0"
@@ -910,15 +927,17 @@
      style="fill:url(#grad_dp_009-6);fill-rule:evenodd;stroke:#545454;stroke-width:14;stroke-linejoin:round"
      d="m 75.679,747.99802 c 0,-16.074 13.032,-29.106 29.107,-29.106 h 130.793 c 16.075,0 29.107,13.032 29.107,29.106 v 130.792 c 0,16.075 -13.032,29.107 -29.107,29.107 H 104.786 c -16.075,0 -29.107,-13.032 -29.107,-29.107 z"
      id="dp_path009-0"
-     inkscape:export-xdpi="30.26"
-     inkscape:export-ydpi="30.26" />
+     inkscape:export-xdpi="27.888432"
+     inkscape:export-ydpi="27.888432"
+     inkscape:export-filename="/home/greggo/Code/boxbot/BoxBotProj/Images/blankCommand.png" />
   <path
      inkscape:connector-curvature="0"
-     style="fill:url(#grad_dp_010-1);fill-rule:evenodd;stroke:#d7d7d7;stroke-width:6.66666985;stroke-linejoin:round"
+     style="fill:#2e2e2e;fill-rule:evenodd;stroke:#ffff00;stroke-width:12;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1;filter:url(#filter1260);stroke-miterlimit:4;stroke-dasharray:none"
      d="m 75.679,747.99602 c 0,-16.075 13.032,-29.107 29.107,-29.107 h 130.793 c 16.075,0 29.107,13.032 29.107,29.107 v 130.792 c 0,16.074 -13.032,29.106 -29.107,29.106 H 104.786 c -16.075,0 -29.107,-13.032 -29.107,-29.106 z"
      id="dp_path010-9"
-     inkscape:export-xdpi="30.26"
-     inkscape:export-ydpi="30.26" />
+     inkscape:export-xdpi="27.888432"
+     inkscape:export-ydpi="27.888432"
+     inkscape:export-filename="/home/greggo/Code/boxbot/BoxBotProj/Images/blankCommand.png" />
   <path
      inkscape:connector-curvature="0"
      style="fill:url(#grad_dp_011-3);fill-rule:evenodd;stroke:#545454;stroke-width:14;stroke-linejoin:round"
