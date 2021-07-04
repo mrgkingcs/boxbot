@@ -11,7 +11,7 @@ func _ready():
 	draggingControl = get_node("DraggingCommand")
 	dropTarget = get_node("../ProgramPanel")
 
-func begin_drag(commandIndex, controlToDrag):
+func begin_drag(controlToDrag):
 	draggingControl.global_position = controlToDrag.rect_global_position + controlToDrag.rect_size*0.5
 	draggingControl.texture = controlToDrag.texture
 	draggingControl.set_visible(true)

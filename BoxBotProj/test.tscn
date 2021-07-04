@@ -38,6 +38,27 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 64, 128, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0.192157, 0.2, 0.235294, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.117647, 0.117647, 0.12549, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.898039, 0.941176, 0.141176, 0.2 )
 border_width_left = 4
@@ -54,30 +75,9 @@ expand_margin_right = 4.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxEmpty" id=10]
+
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-content_margin_left = 32.0
-content_margin_right = 32.0
-content_margin_top = 16.0
-content_margin_bottom = 16.0
-bg_color = Color( 0.192157, 0.2, 0.235294, 1 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0.117647, 0.117647, 0.12549, 1 )
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
@@ -194,31 +194,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource( 6 )
 
-[node name="CommandHighlight" type="Panel" parent="."]
-margin_left = 16.0
-margin_top = 32.0
-margin_right = 104.0
-margin_bottom = 768.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CommandBlank" type="TextureRect" parent="."]
 visible = false
 margin_right = 64.0
 margin_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource( 11 )
+texture = SubResource( 8 )
 
 [node name="ProgramPanel" type="PanelContainer" parent="."]
 anchor_left = 0.125
 anchor_top = 0.8
 anchor_right = 0.975
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 9 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,11 +238,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CommandHighlight" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 768.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DragManager" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 10 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -261,7 +261,7 @@ __meta__ = {
 
 [node name="DraggingCommand" type="Sprite" parent="DragManager"]
 visible = false
-texture = SubResource( 10 )
+texture = SubResource( 11 )
 [connection signal="gui_input" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_gui_input" binds= [ 0 ]]
 [connection signal="mouse_entered" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_entered" binds= [ 0 ]]
 [connection signal="mouse_exited" from="CommandPanel/GridContainer/CommandIconContainer/Forward" to="CommandPanel" method="_on_command_mouse_exited" binds= [ 0 ]]
