@@ -1,3 +1,9 @@
 Righteous Font from https://fonts.google.com/specimen/Righteous?category=Sans+Serif,Display
 (Open Font Licence)
 
+textureStone.png by PamNawi CC0 - https://opengameart.org/content/handpainted-stone-tile-textures
+
+handpaintedwall2.png by PamNawi CC0 - https://opengameart.org/content/handpainted-stone-wall-textures
+
+metal_04.jpg by txturs CC0 - https://opengameart.org/content/2048-stylized-tileable-metal-panel
+

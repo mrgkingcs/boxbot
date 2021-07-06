@@ -38,12 +38,12 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 64, 128, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 32.0
 content_margin_right = 32.0
 content_margin_top = 16.0
@@ -59,7 +59,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.898039, 0.941176, 0.141176, 0.2 )
 border_width_left = 4
 border_width_top = 4
@@ -200,14 +200,14 @@ margin_right = 64.0
 margin_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource( 8 )
+texture = SubResource( 7 )
 
 [node name="ProgramPanel" type="PanelContainer" parent="."]
 anchor_left = 0.125
 anchor_top = 0.8
 anchor_right = 0.975
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 9 )
+custom_styles/panel = SubResource( 8 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -244,7 +244,7 @@ margin_top = 32.0
 margin_right = 104.0
 margin_bottom = 768.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
