@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Fonts/PanelStyle.tres" type="StyleBox" id=1]
 [ext_resource path="res://Models/boxbotMesh_anim.fbx" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://DragManager.gd" type="Script" id=5]
 [ext_resource path="res://ProgramPanel.gd" type="Script" id=6]
 [ext_resource path="res://Images/blankCommand.png" type="Texture" id=7]
+[ext_resource path="res://3DScene.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -100,11 +101,17 @@ hdr = false
 render_target_update_mode = 3
 
 [node name="3DScene" type="Spatial" parent="ViewportContainer/Viewport"]
+script = ExtResource( 8 )
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport/3DScene"]
-transform = Transform( 0.624902, 0, 0.780703, 0, 1, 0, -0.780703, 0, 0.624902, 1.76679, 0.161471, 1.34618 )
+transform = Transform( 0.617214, -0.508061, 0.600766, 0.0134939, 0.770285, 0.637558, -0.786679, -0.385403, 0.482286, 8.00988, 8.37714, 6.15509 )
+fov = 35.0
 
 [node name="boxbotMesh_anim" parent="ViewportContainer/Viewport/3DScene" instance=ExtResource( 2 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport/3DScene"]
+transform = Transform( -0.238518, -0.510774, 0.825966, 0.404503, 0.720969, 0.562655, -0.882885, 0.468309, 0.0346453, -1.4311, 5.03732, 5.69348 )
+light_color = Color( 0.741176, 0.741176, 0.741176, 1 )
 
 [node name="CommandPanel" type="PanelContainer" parent="."]
 anchor_right = 0.1
