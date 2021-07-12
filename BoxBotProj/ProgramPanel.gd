@@ -57,6 +57,8 @@ func handleDrop():
 			newCommand.connect("mouse_exited", self, "_on_command_mouse_exited", [newCommand])
 			newCommand.connect("gui_input", self, "_on_command_gui_input", [newCommand])
 
+			print(newCommand.get_meta('COMMAND'))
+
 			programBlocksNode.add_child(newCommand)
 			programBlocksNode.move_child(newCommand, blankIndex)
 			blankIndex = -1

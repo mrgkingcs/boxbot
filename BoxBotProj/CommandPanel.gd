@@ -36,7 +36,7 @@ func _ready():
 		control.name = command[0]
 		control.set_h_size_flags(SIZE_SHRINK_CENTER)
 		control.set_v_size_flags(SIZE_SHRINK_CENTER)
-		control.set_meta(command[0], command[0])
+		control.set_meta('COMMAND', command[0])
 		
 		control.connect("mouse_entered", self, "_on_command_mouse_entered", [control])
 		control.connect("mouse_exited", self, "_on_command_mouse_exited", [control])
